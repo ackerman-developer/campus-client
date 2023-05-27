@@ -9,12 +9,12 @@ import { createVacancy } from '../../api/vacancy-api'
 import { toast } from 'react-toastify'
 
 export const PostVacancy = () =>{
-    const onChange = (file) => {
-        const { files } = file.target;
-        if (files && files.length !== 0) {
-            setImage(files[0]);
-        }
-    }
+    // const onChange = (file) => {
+    //     const { files } = file.target;
+    //     if (files && files.length !== 0) {
+    //         setImage(files[0]);
+    //     }
+    // }
     useEffect(() => {
         document.title = 'Опубликовать вакансию'
     })
@@ -29,7 +29,7 @@ export const PostVacancy = () =>{
     const [fullAddress, setFullAddress] = useState('')
     const [number, setNumber] = useState('')
     const [email, setEmail] = useState('')
-    const [image, setImage] = useState();
+    // const [image, setImage] = useState();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -208,8 +208,9 @@ export const PostVacancy = () =>{
                             type='submit'
                             onClick={ 
                                 async () => {
-                                const response = await createVacancy (nameVacancy, nameCompany, companyDescription, duties,
-                                    expectations, skills, conditions, image, fullAddress, number, email)
+                                    const image = undefined
+                                    await createVacancy (nameVacancy, nameCompany, companyDescription, duties,
+                                        expectations, skills, conditions, image, fullAddress, number, email)
                                 }
                             }
                         >Опубликовать вакансию</button>
