@@ -139,7 +139,7 @@ export const CreateResume = () =>{
                         <button
                             type='submit' onClick={
                                 async () => {
-                                        await createResume (name, number, city, aboutYou, vacancy, workExamples, educational)
+                                    const response = await createResume (name, number, city, aboutYou, vacancy, workExamples, educational)
                                     }
                             }>Опубликовать резюме</button>
                     </div>
